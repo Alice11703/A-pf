@@ -1,14 +1,13 @@
 import React from "react";
+import Title from "../../modules/Title";
 
 const Projects = () => {
     return (
         <>
-        <section id="_projects">
-            <div>            
-                <div className="sc__title">Projects</div>
+            <div>
+                <Title />
                 <div className="sc__content">text</div>
             </div>
-        </section>
         </>
     );
 }

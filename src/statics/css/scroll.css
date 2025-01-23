@@ -34,6 +34,17 @@
   align-items: center;
 }
 
+/* scroll-animation */
+.typo__wrapper {
+  opacity: 0; /* 초기 상태에서 보이지 않음 */
+  transform: translateX(0); /* x 축 이동 초기화 */
+  will-change: opacity, transform; /* 성능 최적화 */
+}
+.typo__wrapper.active {
+  opacity: 1;
+  transform: translateY(0); /* 원래 위치 */
+}
+
 /* ------------------------
   narrow-screen
 ------------------------ */
