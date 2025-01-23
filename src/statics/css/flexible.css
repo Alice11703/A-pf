@@ -1,0 +1,106 @@
+/*250102*/
+
+/* narrow-screen */
+
+@media (max-width: 780px) {
+  /* ------------------------
+    MENU-BAR 
+------------------------ */
+  .btn__menubar {
+    width: 5vw;
+    height: 5vw;
+    border: none;
+    color: var(--defaultBlack);
+    outline: none;
+    cursor: pointer;
+  }
+  .btn__menubar::before {
+    color: var(--defaultBlack);
+    font-family: "Font Awesome 5 Free";
+    font-size: 2rem;
+    font-weight: 900;
+    content: "\f0c9";
+    cursor: pointer;
+  }
+  .btn__menubar:hover::before {
+    color: var(--defaultEm);
+  }
+
+  .btn__menubar img:hover {
+    border-radius: 4px;
+    outline: 3px solid var(--hoverOutline);
+  }
+  .cont__menu {
+    display: none;
+  }
+  /* ------------------------
+    COMMON 
+------------------------ */
+  .container {
+    margin: 0;
+  }
+  section {
+    margin: calc(50px + 7vh) 0;
+  }
+  .sc__title {
+    margin: 0 0 10px 0;
+    font-size: calc(2.2rem + 0.1vw);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .sc__content {
+    width: 90vw;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  /* ------------------------
+    HOME 
+------------------------ */
+
+  /* ------------------------
+    ABOUT 
+------------------------ */
+  .about__cont {
+    flex-direction: column;
+    justify-content: center;
+    /**/
+    text-align: center;
+  }
+  .about__cont img {
+    width: 60vw;
+    margin: 0 auto;
+  }
+  .about__cont .about__greeting {
+    text-align: left;
+  }
+  .about__cont p {
+    margin: 12px 0;
+  }
+  .about__cont p:first-of-type {
+    margin: 6px 0 20px 0;
+  }
+
+  /* ------------------------
+    SKILLS 
+------------------------ */
+  .skill__cont--set {
+    margin: 20px 0 0 0;
+    text-align: center;
+  }
+  .skill__cont--set p {
+    display: inline-block;
+    margin: 5px;
+    padding: 6px 10px;
+    border: 2px solid var(--defaultBlack);
+    border-radius: 5px;
+  }
+
+  /* ------------------------
+    PROJECTS 
+------------------------ */
+
+  /* ------------------------
+    CAREER 
+------------------------ */
+}

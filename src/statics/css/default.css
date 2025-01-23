@@ -1,0 +1,52 @@
+/*250102*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* ------------------------
+    DEFAULT SETTINGS 
+------------------------ */
+:root {
+    margin:0; 
+    padding: 0;
+    font-size: 16px;
+
+    /* Colorset */
+    --defaultBlack:#1a1a1a;
+    --defaultWhite:#f1efed;
+    --defaultYellow:#f1c698;
+    --defaultGreen:#15ce8b;
+    --defaultEm:#f09839;
+    --hoverOutline:#d8d8d8;
+    --txtMute:#d5d5d5;
+    --txtSoft: #b5d0f4;
+  }  
+  body {
+    margin: 0;
+    background: #f1efed;
+    color: var(--defaultBlack);
+    font-family: 'Noto Sans', 'Noto Sans KR', 'Roboto', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }  
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }  
+  a {
+    color: inherit;
+  }
+  ol, ul, li {
+    list-style: none ;
+  }
+  .unselectable { 
+    -webkit-touch-callout:none; 
+    -webkit-user-select:none; 
+    -khtml-user-select:none; 
+    -moz-user-select:none; 
+    -ms-user-select:none; 
+    user-select:none; 
+  }
+  ::selection {
+    /* color: #e2e2e2; */
+    color: var(--txtSoft);
+    background: none;
+  }
