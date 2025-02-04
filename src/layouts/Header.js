@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Navigation from '../modules/Nav';
-import '../statics/css/header.css';
+import Navigation from '../components/Nav';
 
-const Header = (props) => {
+const Header = () => {
     const [width, setWidth] = useState(window.innerWidth);
-    const [activeSection, setActiveSection] = useState(''); // 현재 활성화된 섹션
+    const [activeSection, setActiveSection] = useState('');
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // 메뉴 상태 추가
 
     // 화면 크기 감지
     useEffect(() => {
@@ -14,18 +14,19 @@ const Header = (props) => {
         }
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, [width]);
+    }, []);
 
-    // 특정 화면 너비 이하에서 사이드 내비게이션 처리
+    // 특정 화면 너비 이하에서 사이드 내비게이션 초기 상태 설정
     useEffect(() => {
-        if (width < 780) {
-            handleSideNavToggle();
+        if (width > 780) {
+            setIsMenuOpen(false); // 데스크탑에서는 항상 닫힘
         }
     }, [width]);
 
-    function handleSideNavToggle() {
-        // 사이드 내비게이션 토글 로직
-    }
+    // 사이드 내비게이션 토글 함수
+    const handleSideNavToggle = () => {
+        setIsMenuOpen((prev) => !prev);
+    };
 
     // 활성 섹션 관리 (IntersectionObserver)
     useEffect(() => {
@@ -35,13 +36,13 @@ const Header = (props) => {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id); // 보이는 섹션 ID 설정
+                        setActiveSection(entry.target.id);
                     }
                 });
             },
             {
-                root: null, // 뷰포트를 기준으로 감지
-                threshold: 0.6, // 60% 이상 보이면 활성화된 것으로 간주
+                root: null,
+                threshold: 0.6,
             }
         );
 
@@ -55,14 +56,20 @@ const Header = (props) => {
                 <div className="btn__home">
                     <Link to="/">KE.</Link>
                 </div>
-                {width > 780 && (
-                    <Navigation activeSection={activeSection} /> // Navigation에 활성 섹션 전달
-                )}
+
+                {/* 데스크탑 메뉴 */}
+                {width > 780 && <Navigation activeSection={activeSection} isFloatingMenu={false} />}
+
+                {/* 모바일 메뉴 */}
                 {width < 780 && (
                     <div className="cont__nav">
-                        <button className="btn__menubar"></button>
-                        <div className="cont__menu">
-                            <Navigation activeSection={activeSection} />
+                        <button className="btn__menubar" onClick={handleSideNavToggle}></button>
+                        <div className={`cont__menu ${isMenuOpen ? "open" : "closed"}`}>
+                            <Navigation
+                                activeSection={activeSection}
+                                isFloatingMenu={false}
+                                closeMenu={() => setIsMenuOpen(false)} // 닫기 함수 전달
+                            />
                         </div>
                     </div>
                 )}
@@ -72,4 +79,3 @@ const Header = (props) => {
 };
 
 export default Header;
-

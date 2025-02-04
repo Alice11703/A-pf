@@ -1,6 +1,13 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import Scroll from "./Scroll";
 import '../../statics/css/scroll.css';
+
+const IconPoint = () => {
+    return (
+        <span className="ico__point"> </span>
+    );
+};
 
 const Home = () => {
     return (
@@ -8,12 +15,15 @@ const Home = () => {
             <section id="home">
                 <div className="sc__content home__cont">
                     <Scroll />
-                    {/* <h1 className="home__typo--lg">Hello, I'm</h1>
-                    <h1 className="home__typo--lg">Koeun</h1>
-                    <p className="home__typo--sm">Frontend</p>
-                    <p className="home__typo--sm">Developer</p> */}
+                    <div className="btn__resume">
+                        <Link
+                            to="https://drive.google.com/file/d/1xe8YSs-a-UVjByjfnrqSWIxScdsByuBI/view?usp=drive_link"
+                            target="_blank"
+                        >
+                        </Link>
+                        <IconPoint />
+                    </div>
                 </div>
-
             </section>
         </>
     );

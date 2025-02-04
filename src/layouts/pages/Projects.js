@@ -1,12 +1,18 @@
 import React from "react";
-import Title from "../../modules/Title";
+
+const today = new Date();
+const month = today.getMonth() + 1;
+const year = today.getFullYear();
+const currentDate = month + "." + year;
 
 const Projects = () => {
     return (
         <>
-            <div>
-                <Title />
-                <div className="sc__content">text</div>
+            <span> ~ {currentDate}</span>
+            <div className="sc__content project__cont">
+                <article>1</article>
+                <article>2</article>
+                <article>3</article>
             </div>
         </>
     );

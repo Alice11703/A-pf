@@ -1,0 +1,29 @@
+/* 기본 라이트 모드 */
+:root {
+  --bg-color: var(--defaultW);
+  --text-color: var(--defaultB);
+  --button-bg: rgba(200, 200, 200, 0.45);
+  --button-text: var(--defaultB);
+  --txtMute: rgba(26, 26, 26, 0.2);
+  --text-em: #e0801d;
+  --bg-trans: rgba(241, 239, 237, 0.5);
+}
+
+/* 다크모드 */
+.dark-mode {
+  --bg-color: var(--defaultB);
+  --text-color: var(--defaultW);
+  --button-bg: rgba(111, 111, 111, 0.4);
+  --button-text: var(--defaultW);
+  --txtMute: rgba(255, 255, 255, 0.2);
+  --text-em: #15ce8b;
+  --bg-trans: rgba(28, 28, 28, 0.6);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+

@@ -1,58 +1,70 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useCallback } from "react";
 import { Routes, Route } from "react-router-dom";
-import '../statics/css/main.css';
-import '../statics/css/flexible.css';
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Career from "./pages/Career";
-import TopButton from "../modules/TopButton";
-
+import TopButton from "../components/TopButton";
+import FloatingMenu from '../components/FloatingMenu';
 
 const Main = () => {
-    useEffect(() => {
-        const sections = document.querySelectorAll('section');
+  // 📌 `useCallback`으로 `handleResize` 최적화
+  const handleResize = useCallback(() => {
+    setTimeout(() => {
+      const lastSection = document.querySelector("section:last-of-type");
+      if (lastSection && isBottom()) {
+        lastSection.classList.add("visible");
+      }
+    }, 200);
+  }, []);
 
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible'); // 보이는 섹션에 클래스 추가
-                    } else {
-                        entry.target.classList.remove('visible'); // 안 보이는 섹션에서 클래스 제거
-                    }
-                });
-            },
-            {
-                root: null,
-                threshold: 0.2,
+  useEffect(() => {
+    let observer;
+
+    const observeSections = () => {
+      if (observer) observer.disconnect();
+      const sections = document.querySelectorAll("section");
+
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const isLastSection = entry.target === sections[sections.length - 1];
+
+            if (entry.isIntersecting || (isLastSection && isBottom())) {
+              entry.target.classList.add("visible");
+            } else {
+              entry.target.classList.remove("visible");
             }
-        );
+          });
+        },
+        {
+          root: null,
+          threshold: 0.2,
+        }
+      );
 
-        sections.forEach((section) => observer.observe(section));
-        return () => observer.disconnect();
-    }, []);
+      sections.forEach((section) => observer.observe(section));
+    };
 
-    return (
-      <>
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-        </Routes>
-        <section id="_about" className="section" style={{ height: '100vh' }}>
-          <About />
-        </section>
-        <section id="_projects" className="section" style={{ height: '100vh' }}>
-          <Projects />
-        </section>
-        <section id="_career" className="section" >
-          <Career />
-        </section>
-      </div>
+    observeSections();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]); // ✅ `useCallback`으로 감싼 `handleResize`를 의존성 배열에 추가
+
+  const isBottom = () => {
+    return window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;
+  };
+
+  return (
+    <>
+      <FloatingMenu />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
       <TopButton />
     </>
-        
-    );
+  );
 };
 
 export default Main;

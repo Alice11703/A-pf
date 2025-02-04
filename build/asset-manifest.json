@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.55b8ab46.css",
-    "main.js": "/static/js/main.93e1a3f3.js",
+    "main.css": "/static/css/main.f698affc.css",
+    "main.js": "/static/js/main.abecb812.js",
     "static/js/488.9c92ff38.chunk.js": "/static/js/488.9c92ff38.chunk.js",
     "static/media/img_me_4.png": "/static/media/img_me_4.fde579be13155972fd51.png",
+    "static/media/logo_everland.png": "/static/media/logo_everland.1bbc7208a8b76ae9bc18.png",
+    "static/media/logo_calyx.svg": "/static/media/logo_calyx.a6eafb0faf3e64c208db49a2d6aba247.svg",
+    "static/media/logo_coop.jpg": "/static/media/logo_coop.3649b31ecb3642de5191.jpg",
+    "static/media/logo_incruit.png": "/static/media/logo_incruit.691c065a817613ae6522.png",
     "index.html": "/index.html",
-    "main.55b8ab46.css.map": "/static/css/main.55b8ab46.css.map",
-    "main.93e1a3f3.js.map": "/static/js/main.93e1a3f3.js.map",
+    "main.f698affc.css.map": "/static/css/main.f698affc.css.map",
+    "main.abecb812.js.map": "/static/js/main.abecb812.js.map",
     "488.9c92ff38.chunk.js.map": "/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.55b8ab46.css",
-    "static/js/main.93e1a3f3.js"
+    "static/css/main.f698affc.css",
+    "static/js/main.abecb812.js"
   ]
 }

@@ -1,0 +1,58 @@
+.floating-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  z-index: 1000;
+  right: 0;
+  bottom: 50%;
+  padding: 15px;
+  border-radius: 10px;
+  /* background: rgba(26, 26, 26, 0.7); */
+  text-align: right;
+  color: var(--text-color);
+  transition: opacity 0.3s, transform 0.3s;
+}
+.floating-menu.visible__menu:hover {
+  background: var(--bg-trans);
+}
+.floating-menu a {
+  display: block;
+}
+.hidden__menu {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+
+.visible__menu {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.floating-menu .nav__list a {
+  text-decoration: none;
+}
+.floating-menu .nav__list span[class^="ico__"] {
+  display: inline-flex;
+  color: var(--text-color);
+  font-family: "Font Awesome 5 Free";
+  font-size: 1rem;
+  font-weight: 900;
+}
+/* .floating-menu span[class^="ico__"]::before {
+  font-size: 1.1rem;
+} */
+.floating-menu span[class^="ico__"] + span[class^="title__"] {
+  display: none;
+}
+.floating-menu .nav__list a:hover > span[class^="title__"] {
+  display: inline-flex;
+  padding-inline-end: 8px;
+  color: var(--text-em);
+  transform: scale(1.4);
+  transition: ease-in-out 2s, transform 1.2s;
+}
+.floating-menu .nav__list a:hover > span[class^="ico__"] {
+  display: none;
+}
