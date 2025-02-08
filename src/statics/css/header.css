@@ -9,7 +9,7 @@ header {
 }
 nav {
   display: grid;
-  grid-template-columns: calc(160px + 1vw) 1fr 120px;
+  grid-template-columns: calc(2.5rem + 1vw) 1fr 120px;
   grid-template-rows: 44px;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -23,13 +23,13 @@ nav {
 nav .btn__home {
   grid-area: 1 / 1 / 2 / 2;
   /**/
-  text-align: left;
+  text-align: center;
   font-weight: 700;
 }
 nav .btn__home a {
   display: inline-block;
-  width: 42px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   padding: 2px;
   border-radius: 100%;
   background: var(--text-color);
@@ -49,7 +49,7 @@ nav .nav__list {
 }
 nav .nav__list a {
   margin: 0;
-  padding: 0 2rem;
+  padding: 0;
   font-size: calc(1.4rem);
   text-decoration: none;
 }
@@ -62,8 +62,16 @@ nav .btn__mode {
   text-align: center;
 }
 
-nav .nav__list a:not(:first-of-type) {
-  border-left: 3px dotted var(--button-bg);
+nav .nav__list a:not(:first-of-type)::before {
+  padding: 0 2rem;
+  font-size: 2rem;
+  color: var(--button-bg);
+  content: "|";
+  /* border-left: 3px dotted var(--button-bg); */
+}
+nav .nav__list a:last-of-type::after {
+  padding: 0 1rem;
+  content: "";
 }
 .nav__list span[class^="ico__"] {
   display: none;

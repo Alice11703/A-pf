@@ -61,8 +61,9 @@
   .typo__wrapper {
     flex: 0 0 auto;
     transition: 3.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    opacity: 1;
   }
-  .home__typo--lg {
+  /* .home__typo--lg {
     font-size: calc(2rem + 20vw);
     line-height: calc(22vw + 1vh);
   }
@@ -74,7 +75,7 @@
   .home__typo--sm {
     font-size: calc(1rem + 4vw);
     line-height: calc(11vw + 1vh);
-  }
+  } */
 }
 
 /* ------------------------

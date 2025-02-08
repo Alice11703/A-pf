@@ -7,8 +7,9 @@
     HEADER
 ------------------------ */
   nav {
-    grid-template-columns: 100px 1fr !important;
+    grid-template-columns: 60px 1fr !important;
     grid-template-rows: 44px !important;
+    padding-inline: 0;
   }
 
   nav .btn__home {
@@ -25,8 +26,8 @@
     text-align: right;
   }
   .btn__menubar {
-    width: 5vw;
-    height: 5vw;
+    width: 50px;
+    height: 50px;
     border: none;
     background: none;
     color: var(--text-color);
@@ -88,7 +89,11 @@
     border-left: none;
     font-size: calc(1.8rem + 0.1vw);
   }
-
+  nav .nav__list a:not(:first-of-type)::before,
+  nav .nav__list a:last-of-type::after {
+    padding: 0;
+    content: "";
+  }
   .cont__menu.open .btn__mode {
     margin-block-start: 10px;
   }
@@ -132,13 +137,16 @@
   section {
     margin: calc(50px + 7vh) 0;
   }
+  section#home, section#home .section {
+    padding-inline: 0;
+  }
   .sc__title {
     margin: 0 0 10px 0;
     font-size: calc(2.2rem + 1vw);
     text-align: center;
   }
   .sc__content {
-    width: 90vw;
+    /* width: 90vw; */
     margin: 0 auto;
     text-align: left;
   }
@@ -148,6 +156,9 @@
 ------------------------ */
   .home__cont {
     text-align: center;
+  }
+  .btn__resume .ico__point {
+    top:15px;
   }
 
   /* ------------------------
@@ -160,15 +171,10 @@
     /**/
     text-align: center;
   }
-
-  .about__cont .about__img {
-
-  }
   .about__cont .about__img .ico__hands::before{
     right: 20vw;
     font-size: calc(3rem + 5vw);
   }
-
   .about__cont .about__img img {
     width: 60vw;
     margin: 0 auto;
@@ -177,12 +183,16 @@
     padding-inline: 10px;
     text-align: left;
   }
-  .about__cont p {
+  .about__desc p {
     margin: 12px 0;
   }
-  .about__cont p:first-of-type {
+  .about__desc p:first-of-type {
     margin: .5rem 0;
-    text-indent: initial;
+    text-indent: 0;
+  }
+  .about__desc span:not(.ico__hands) {
+    display: block;
+    margin: 0 0 .5rem 0;
   }
 
   /* ------------------------

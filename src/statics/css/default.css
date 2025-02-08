@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   font-size: 16px;
+  --common-gutter: clamp(1.5rem, (1.5rem + 1vw), 2.2rem);
 
   /* Colorset */
   --defaultB: #1a1a1a;
@@ -40,6 +41,9 @@ footer {
   height: 100px;
   background: var(--text-color);
   color: var(--bg-color);
+}
+html {
+  scroll-behavior: smooth;
 }
 a {
   color: inherit;
@@ -129,19 +133,21 @@ li {
 .container {
   overflow: hidden;
   margin: 0 auto;
-  width: calc(100% - 20px);
+  width: calc(100%);
   text-align: center;
+  /* background: url(../images/bg_img.png) repeat center center; */
 }
 section {
   min-height: 40vh;
   margin: 0 0 calc(50px + 3vh) 0;
-  padding: 3vh 0 0 0;
+  padding-block-start: 3vh;
+  padding-inline: var(--common-gutter);
 }
 section#home, section#home .section {
-  padding: 0;
+  padding-block: 0;
 }
 .sc__title {
-  margin: 0 0 30px 2%;
+  margin-block-end:30px;
   font-size: calc(2.2rem + 0.5vw);
   font-weight: 700;
   text-align: left;
@@ -167,7 +173,7 @@ section#career .sc__title::before {
 .sc__content {
   /* width: 100vw; */
   margin: 0 auto;
-  padding: 0 2%;
+  padding-block: 0;
   text-align: left;
 }
 
@@ -212,8 +218,8 @@ section#career .sc__title::before {
 }
 .btn__resume .ico__point {
   position: absolute;
-  top: 0;
-  left:47.5%;
+  top: 10px;
+  left: calc((100% - 48px)/2);
 }
 .btn__resume .ico__point::before {
   color: var(--text-em);
@@ -293,16 +299,21 @@ section#career .sc__title::before {
   justify-content: center;
   padding-inline: 40px 10px;
 }
-.about__cont p {
+.about__desc p {
   margin: 6px 0;
-  text-indent: -1.5rem;
+  text-indent: -1.3rem;
 }
-.about__cont p:first-of-type {
-  margin: 6px 0 20px 0;
-}
-.about__cont .ico__check::before {
+.about__desc p:not(:first-of-type)::before {
+  padding-inline-end: .3rem;
   color: var(--text-color);
+  font-family: "Font Awesome 5 Free";
+  font-size: 1rem;
+  font-weight: 900;
   opacity: .4;
+  content: "\f058";
+}
+.about__desc p:first-of-type {
+  margin: 6px 0 20px 0;
 }
 
 /* ------------------------
@@ -320,7 +331,16 @@ section#career .sc__title::before {
   border-radius: 5px;
   text-indent: initial;
 }
-
+.skill__cont--set p::before {
+  padding-inline-end: .5rem;
+  color: var(--text-em);
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.2rem;
+  font-weight: 900;
+  opacity: .4;
+  content: "\f058";
+  opacity: 1;
+}
 /* ------------------------
     PROJECTS 
 ------------------------ */
@@ -346,6 +366,33 @@ section#career .sc__title::before {
   border-radius: 10px;
   text-align: left;
 }
+.project__social { 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 0 0;
+}
+.project__social a {
+  display: inline-block;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border:1px solid var(--text-color);
+  border-radius: 2rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+}
+.project__social a::after {
+  padding: 0 1rem;
+  color: var(--text-em);
+  font-family: "Font Awesome 5 Free";
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 900;
+  content: "\f08e";
+}
+
 /* ------------------------
     CAREER 
 ------------------------ */

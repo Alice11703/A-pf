@@ -1,6 +1,6 @@
 import React from "react";
 import CalyxLogoImage from '../../statics/images/logo_calyx.svg';
-import SALogoImage from '../../statics/images/logo_songam.jpeg';
+// import SALogoImage from '../../statics/images/logo_songam.jpeg';
 import IncruitLogoImage from '../../statics/images/logo_incruit.png';
 import CoopLogoImage from '../../statics/images/logo_coop.jpg';
 import ELLogoImage from '../../statics/images/logo_everland.png';
@@ -11,7 +11,7 @@ const Career = () => {
             <div className="sc__content">
                 <div className="career__period">
                     <span>경력사항</span>
-                    <span>총 11년</span>
+                    <span>총 10년 6개월</span>
                 </div>
                 <div className="career__cont">
                     <div className="career__logo">
@@ -56,7 +56,7 @@ const Career = () => {
                         <span className="border__style"></span>
                     </div>
                 </div>
-                <div className="career__cont">
+                {/* <div className="career__cont">
                     <div className="career__logo">
                         <img alt="calyx_logo" src={SALogoImage} />
                     </div>
@@ -73,7 +73,7 @@ const Career = () => {
                         </div>
                         <span className="border__style"></span>
                     </div>
-                </div>
+                </div> */}
                 <div className="career__cont">
                     <div className="career__logo">
                         <img alt="calyx_logo" src={IncruitLogoImage} />
