@@ -6,8 +6,8 @@ import Career from "./Career";
 const Section = ({ id, title }) => {
 
     const renderContent = () => {
-        const lowerId = id.toLowerCase();
-        switch (lowerId) {
+        const normalizedId = id.toLowerCase();
+        switch (normalizedId) {
             case 'about':
                 return <About />;
             case 'projects':
@@ -20,8 +20,8 @@ const Section = ({ id, title }) => {
     };
 
     return (
-        <section id={id} title={title} className="section" style={{ minHeight: '100vh' }}>
-            <h2 className="sc__title"> {title}</h2>
+        <section id={id} className="section">
+            <h2 className="sc__title">{title}</h2>
             {renderContent()}
         </section>
     );

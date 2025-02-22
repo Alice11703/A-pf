@@ -26,12 +26,18 @@
   justify-content: center;
   align-items: center;
   gap: 16px;
+  /* transition: color 0.1s ease; */
 }
 .typo__wrapper {
   display: flex;
   flex: 0 0 auto;
   justify-content: center;
   align-items: center;
+  will-change: transform, opacity, filter;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  perspective: 2000px;
+  transform-origin: center center 50px;
 }
 
 /* scroll-animation */
@@ -52,16 +58,15 @@
   .typo__layout__row,
   .typo__layout__row .typo__container {
     flex-direction: column;
-    transition: 2.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   }
   .typo__layout__col,
   .typo__layout__col .typo__container {
     transition: 2.2s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   .typo__wrapper {
-    flex: 0 0 auto;
-    transition: 3.2s cubic-bezier(0.075, 0.82, 0.165, 1);
-    opacity: 1;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    perspective: 1500px;
   }
   /* .home__typo--lg {
     font-size: calc(2rem + 20vw);
@@ -85,22 +90,178 @@
   position: fixed;
   right: 5%;
   bottom: 5%;
-  z-index: 1;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
+
+.scroll__container.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 #top {
   width: 50px;
   height: 50px;
   padding: 15px 10px;
-  border: 1px solid var(--bg-color);
+  border: 1px solid var(--border-color);
   border-radius: 50%;
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
   outline: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 #top:hover {
-  border: 1px solid var(--text-em);
+  border-color: var(--text-em);
   background: var(--text-em);
+  color: var(--bg-color);
+  transform: translateY(-3px);
+}
+
+#top:active {
+  transform: translateY(0);
+}
+
+.typo__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  perspective: 2000px;
+}
+
+/* 프로젝트 섹션 스타일 */
+.project__cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  justify-items: center;
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.project__article {
+  position: relative;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.project__article::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 0%, var(--text-em) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.project__article:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--text-em);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project__article:hover::before {
+  opacity: 0.05;
+}
+
+.project__article h3 {
+  position: relative;
+  margin-block: 0 1rem;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.project__article:hover h3 {
+  color: var(--text-em);
+}
+
+.project__content {
+  position: relative;
+  z-index: 1;
+}
+
+.project__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.project__tag {
+  padding: 0.3rem 0.8rem;
+  background: var(--button-bg);
+  color: var(--text-color);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.project__article:hover .project__tag {
+  background: var(--text-em);
+  color: var(--bg-color);
+  transform: translateY(-2px);
+}
+
+.project__links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project__link {
+  border: 1px solid var(--text-color);
+  background: none;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.project__link:hover {
+  color: var(--text-em);
+  opacity: 1;
+  transform: translateX(3px);
+}
+
+/* 반응형 처리 */
+@media (max-width: 780px) {
+  .project__cont {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .project__article {
+    padding: 1.5rem;
+  }
+
+  .project__article:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
 }

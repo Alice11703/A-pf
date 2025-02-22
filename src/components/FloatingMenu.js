@@ -2,46 +2,46 @@ import React, { useState, useEffect } from "react";
 import Navigation from './Nav';
 import "../statics/css/sideMenu.css";
 
-function SideMenu() {
+function FloatingMenu() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
 
   useEffect(() => {
-    // 스크롤 10% 감지
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight;
-      const winHeight = document.documentElement.clientHeight;
-      const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+    let lastScrollY = window.scrollY;
+    let ticking = false;
 
-      setIsVisible(scrollPercent >= 10);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight;
+          const winHeight = document.documentElement.clientHeight;
+          const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
+          
+          setIsVisible(scrollPercent >= 10);
+          setIsHidden(scrollTop < lastScrollY && scrollTop > 100);
+          
+          lastScrollY = scrollTop;
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Footer 감지
-    const targetElement = document.getElementById("footerTarget");
-    if (!targetElement) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsHidden(entry.isIntersecting); // Footer가 보이면 숨김 처리
-      },
-      { threshold: 0.5 }
-    );
-
-    observer.observe(targetElement);
-    return () => observer.unobserve(targetElement);
-  }, []);
-
   return (
-    <div className={`floating-menu ${isVisible && !isHidden ? "visible__menu" : "hidden__menu"}`}>
+    <div 
+      className={`floating-menu ${isVisible ? (isHidden ? "hidden__menu" : "visible__menu") : ""}`}
+      style={{
+        top: `${Math.max(20, Math.min(window.innerHeight - 300, window.scrollY + 100))}px`
+      }}
+    >
       <Navigation isFloatingMenu={true} />
     </div>
   );
 }
 
-export default SideMenu;
+export default FloatingMenu;

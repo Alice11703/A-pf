@@ -4,9 +4,9 @@ const HTML = 'HTML';
 const CSS = 'CSS';
 const JAVASCRIPT = 'Javascript';
 const REACT = 'React';
-// const TYPESCRIPT = 'TypeScript';
+const TYPESCRIPT = 'TypeScript';
 const WEB_ACCESSIBILITY = 'Web Accessibility';
-// const TAILWIND_CSS = 'Tailwind CSS';
+const TAILWIND_CSS = 'Tailwind CSS';
 const SASS = 'SASS';
 
 
@@ -19,8 +19,8 @@ const Skills = () => {
                 <p>{WEB_ACCESSIBILITY}</p>
                 <p>{JAVASCRIPT}</p>
                 <p>{REACT}</p>
-                {/* <p>{TYPESCRIPT}</p> */}
-                {/* <p>{TAILWIND_CSS}</p> */}
+                <p>{TYPESCRIPT}</p>
+                <p>{TAILWIND_CSS}</p>
                 <p>{SASS}</p>
             </div>
         </>

@@ -2,42 +2,31 @@ import React, { useState, useEffect } from "react";
 import "../statics/css/colorTheme.css";
 
 function DarkModeToggle() {
-  // ✅ 기본값을 다크모드로 설정
-  const [darkMode, setDarkMode] = useState(true);
-
-  useEffect(() => {
-    const savedMode = localStorage.getItem("darkMode");
-
-    if (savedMode === "enabled" || savedMode === null) {
-      setDarkMode(true);
-      document.body.classList.add("dark-mode");
-    } else {
-      setDarkMode(false);
-      document.body.classList.remove("dark-mode");
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    setDarkMode((prevMode) => {
-      const newMode = !prevMode;
-
-      if (newMode) {
-        document.body.classList.add("dark-mode");
-        localStorage.setItem("darkMode", "enabled");
-      } else {
-        document.body.classList.remove("dark-mode");
-        localStorage.setItem("darkMode", "disabled");
-      }
-
-      return newMode;
+    const [isDark, setIsDark] = useState(() => {
+        const savedTheme = localStorage.getItem("theme");
+        return savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
     });
-  };
 
-  return (
-    <button onClick={toggleDarkMode} className="toggle-btn">
-      {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-    </button>
-  );
+    useEffect(() => {
+        const root = document.documentElement;
+        root.setAttribute("data-theme", isDark ? "dark" : "light");
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    }, [isDark]);
+
+    const toggleTheme = () => {
+        setIsDark(prev => !prev);
+    };
+
+    return (
+        <button 
+            onClick={toggleTheme} 
+            className="toggle-btn"
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+        >
+            <span className="toggle-icon">{isDark ? "☀️" : "🌙"}</span>
+            <span className="toggle-text">{isDark ? "Light Mode" : "Dark Mode"}</span>
+        </button>
+    );
 }
 
 export default DarkModeToggle;

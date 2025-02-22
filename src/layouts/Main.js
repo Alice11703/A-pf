@@ -5,7 +5,6 @@ import TopButton from "../components/TopButton";
 import FloatingMenu from '../components/FloatingMenu';
 
 const Main = () => {
-  // 📌 `useCallback`으로 `handleResize` 최적화
   const handleResize = useCallback(() => {
     setTimeout(() => {
       const lastSection = document.querySelector("section:last-of-type");
@@ -50,7 +49,7 @@ const Main = () => {
       observer.disconnect();
       window.removeEventListener("resize", handleResize);
     };
-  }, [handleResize]); // ✅ `useCallback`으로 감싼 `handleResize`를 의존성 배열에 추가
+  }, [handleResize]);
 
   const isBottom = () => {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight - 10;

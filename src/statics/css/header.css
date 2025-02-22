@@ -45,6 +45,7 @@ nav .btn__home a:hover {
 nav .nav__list {
   grid-area: 1 / 2 / 2 / 3;
   /**/
+  padding-inline-start:1rem;
   text-align: right;
 }
 nav .nav__list a {
@@ -62,12 +63,11 @@ nav .btn__mode {
   text-align: center;
 }
 
-nav .nav__list a:not(:first-of-type)::before {
+nav .nav__list a::before {
   padding: 0 2rem;
   font-size: 2rem;
   color: var(--button-bg);
-  content: "|";
-  /* border-left: 3px dotted var(--button-bg); */
+  /* content: "|"; */
 }
 nav .nav__list a:last-of-type::after {
   padding: 0 1rem;
