@@ -10,7 +10,7 @@
   padding: 0;
   font-size: 16px;
   --common-gutter: clamp(1.5rem, (1.5rem + 1vw), 2.2rem);
-
+  --transition: all 0.28s ease-in-out;
   /* Colorset */
   --defaultB: #1a1a1a;
   --defaultW: #f1efed;
@@ -100,7 +100,7 @@ li {
   width: 50px;
   margin-bottom: 1.625rem;
   padding-bottom: 0.625rem;
-  border-bottom: 1px solid var(--defaultRose);
+  border-bottom: 1px solid var(--defaultR);
 }
 
 @keyframes bounce {
@@ -161,6 +161,11 @@ section#home .section {
   font-weight: 900;
   vertical-align: baseline;
   content: "\f007";
+}
+.sc__subtitle {
+  margin-block-end: 10px;
+  font-size: 1.2rem;
+  line-height: calc(1.2rem * 1.5);
 }
 section#about .sc__title::before {
   content: "\f6ed";
@@ -323,8 +328,8 @@ section#career .sc__title::before {
   padding-inline: 40px 10px;
 }
 .about__desc p {
-  margin: 6px 0;
-  text-indent: -1.3rem;
+  margin-block: 12px 6px;
+  line-height: calc(1rem * 1.5);
 }
 .about__desc p:not(:first-of-type)::before {
   padding-inline-end: 0.3rem;
@@ -336,7 +341,85 @@ section#career .sc__title::before {
   content: "\f058";
 }
 .about__desc p:first-of-type {
-  margin: 6px 0 20px 0;
+  margin-block: 6px 24px;
+}
+.about__desc h1 {
+  margin-block: 6px;
+  font-size: 1.4rem;
+  line-height: calc(1.4rem * 1.5);
+}
+.gallup__cont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  margin-block: 5vh 0;
+  padding-block-start: 3vh;
+  border-top: 1px solid var(--borderSoft);
+}
+.gallup__cont .sc__subtitle::after {
+  padding-inline-start: 5px;
+  color: var(--text-color);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  vertical-align: baseline;
+  content: "\f44b";
+}
+.gallup__cont .gallup__blank {
+  display: inline-flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 338px;
+}
+.gallup__cont img {
+  width: 50vw;
+  object-fit: contain;
+}
+.gallup__cont .gallup__desc {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 50vw;
+  padding-inline: 40px 10px;
+  text-align: left;
+}
+.gallup__cont .gallup__desc dl {
+  margin-block: 10px 0;
+}
+.gallup__cont .gallup__desc dl:hover {
+  color: var(--text-em);
+}
+.gallup__cont .gallup__desc p {
+  margin-block: 2px;
+}
+.bar {
+  width: 10px;
+  height: 10px;
+  margin-inline-end: 10px;
+}
+.bar__orange {
+  background-color: #da792d;
+}
+.bar__blue {
+  background-color: #2f6ec6;
+}
+.bar__purple {
+  background-color: #712b7d;
+}
+.learn-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: var(--text-em);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.learn-more-link:hover {
+  text-decoration: underline;
+  color: var(--text-em);
 }
 
 /* ------------------------
@@ -384,7 +467,7 @@ section#career .sc__title::before {
   align-content: center;
   justify-content: flex-start;
   /**/
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid var(--borderSoft);
@@ -499,7 +582,6 @@ section#career .sc__title::before {
 }
 .career__cont .career__desc span {
   display: inline-block;
-  margin: 10px 5px 0 0;
   color: var(--text-em);
   font-weight: 400;
   opacity: 0.8;
@@ -511,7 +593,7 @@ section#career .sc__title::before {
   opacity: 0.6;
 }
 .career__cont .career__desc p {
-  width:90%;
+  width: 90%;
   margin-block: 0.2em 0;
   padding: 0.3rem 0.8rem;
   background: var(--button-bg);
@@ -522,15 +604,33 @@ section#career .sc__title::before {
   opacity: 0.6;
 }
 .career__cont .career__desc a {
-  color: var(--defaultRose);
   text-decoration: none;
 }
-.career__cont .career__desc a:hover::before {
-  color: var(--text-color);
+.product-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-block: 15px 5px;
+}
+
+.goto-btn {
+  padding: 4px 12px;
+  background-color: var(--txtSoft);
+  color: var(--bg-color);
+  border-radius: 4px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+.goto-btn:hover::before {
+  padding-inline-end: 0.5rem;
+  color: var(--bg-color);
   font-family: "Font Awesome 5 Free";
   font-size: 0.8rem;
   font-weight: 900;
-  vertical-align: middle;
   content: "\f0a4";
   transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.goto-btn:hover {
+  background-color: var(--text-em);
 }

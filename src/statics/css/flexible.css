@@ -1,7 +1,43 @@
 /*250102*/
 
-/* narrow-screen */
+@media (max-width: 1024px) {
+  .gallup__cont {
+    transition: var(--transition);
+    flex-direction: column;
+    justify-content: center;
+  }
+  .sc__subtitle {
+    margin-block: 2vh 0;
+  }
+  .gallup__cont .gallup__blank {
+    width: 100%;
+    padding-inline: 10px;
+  }
+  .gallup__cont .gallup__desc {
+    width: auto;
+    padding-inline: 10px;
+    text-align: left;
+  }
+  .gallup__cont .gallup__desc dl {
+    margin-block: 20px 0;
+  }
+  .gallup__img {
+    display: none;
+  }
+  .learn-more-link {
+    margin-block: 0 20px;
+  }
+}
 
+@media (max-width: 960px) {
+  .about__desc h1 span:not(.ico__hands) {
+    transition: var(--transition);
+    display: block;
+    margin: 0 0 .5rem 0;
+  }
+}
+
+/* narrow-screen */
 @media (max-width: 780px) {
   /* ------------------------
     HEADER
@@ -189,16 +225,13 @@
     text-align: left;
   }
   .about__desc p {
-    margin: 12px 0;
+    margin-block: 18px 12px;
   }
-  .about__desc p:first-of-type {
-    margin: .5rem 0;
-    text-indent: 0;
+  .about__desc h1 {
+    margin-block: 2rem .5rem;
+    /* text-indent: 0; */
   }
-  .about__desc span:not(.ico__hands) {
-    display: block;
-    margin: 0 0 .5rem 0;
-  }
+  
 
   /* ------------------------
     SKILLS 

@@ -17,9 +17,28 @@ const careerData = [
             대출 신청, 처리, 승인 등 전 과정을 지원하는 효율적인 도구와 플랫폼을 제공
             Calyx Software의 모든 제품의 UI 퍼블리싱을 담당`,
         contributions: [
-            { product: "Product PATH", desc: "대출 기관을 위한 대출 프로세스를 간소화하는 클라우드 기반의 솔루션", contribution: "프로젝트 개발 및 유지보수", tools: "협업 도구: TFS, Figma, Teams" },
-            { product: "Product ZENLY", desc: "클라우드 기반 대출 플랫폼으로, 대출 프로세스를 간소화하고 효율성을 높여주는 모기지 플랫폼", contribution: "프로젝트 개발 및 유지보수, 반응형 웹 서비스", subDesc: "미국 웹 접근성 (ADA) 인증 진행", tools: "협업 도구: Github, Notion, Jira, Slack" },
-            { product: "Product MME(Mortgage Market Exchange) UI", desc: "Vendor를 위한 웹 기반의 내부 솔루션", contribution: "프로젝트 개발 및 유지보수, 반응형 웹 서비스", tools: "협업 도구: Jira, Teams" },
+            { 
+                product: "Product PATH", 
+                desc: "대출 기관을 위한 대출 프로세스를 간소화하는 클라우드 기반의 솔루션", 
+                contribution: "프로젝트 개발 및 유지보수", 
+                tools: "협업 도구: TFS, Figma, Teams",
+                link: "https://www.pathsoftware.com"
+            },
+            { 
+                product: "Product ZENLY", 
+                desc: "클라우드 기반 대출 플랫폼으로, 대출 프로세스를 간소화하고 효율성을 높여주는 모기지 플랫폼", 
+                contribution: "프로젝트 개발 및 유지보수, 반응형 웹 서비스", 
+                subDesc: "미국 웹 접근성 (ADA) 인증 진행", 
+                tools: "협업 도구: Github, Notion, Jira, Slack",
+                link: "https://www.calyxsoftware.com/products/zenly"
+            },
+            { 
+                product: "Product MME(Mortgage Market Exchange) UI", 
+                desc: "Vendor를 위한 웹 기반의 내부 솔루션", 
+                contribution: "프로젝트 개발 및 유지보수, 반응형 웹 서비스", 
+                tools: "협업 도구: Jira, Teams",
+                link: "https://mme-prjt.netlify.app/main.html"
+            },
         ],
     },
     {
@@ -102,7 +121,21 @@ const Career = () => {
                                 {career.description}
                                 {career.contributions && career.contributions.map((contribution, idx) => (
                                     <div key={idx}>
-                                        {contribution.product && <span>{contribution.product}</span>}
+                                        {contribution.product && (
+                                            <div className="product-header">
+                                                <span>{contribution.product}</span>
+                                                {contribution.link && (
+                                                    <a 
+                                                        href={contribution.link} 
+                                                        target="_blank" 
+                                                        rel="noopener noreferrer" 
+                                                        className="goto-btn"
+                                                    >
+                                                        Visit
+                                                    </a>
+                                                )}
+                                            </div>
+                                        )}
                                         {contribution.desc && contribution.desc.trim() !== '' && (
                                             <p>{contribution.desc}</p>
                                         )}

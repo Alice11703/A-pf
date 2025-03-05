@@ -11,8 +11,34 @@ const Projects = () => {
     return (
         <>
             <p><IconDot /> ~ {new Date().getMonth() + 1}.{new Date().getFullYear()}</p>
-            
+
             <div className="project__cont">
+                <article className="project__article">
+                    <div className="project__content">
+                        <h3>Mortgage Market Exchange</h3>
+                        <p>MME는 사용자가 대출을 신청하고, 제출한 대출의 진행 상황을 확인할 수 있도록 지원하는 플랫폼입니다. 금융 기관과 대출 신청자 간의 원활한 커뮤니케이션을 돕는 것을 목표로 합니다.
+                        </p>
+                        <div className="project__tags">
+                            <span className="project__tag">HTML</span>
+                            <span className="project__tag">CSS</span>
+                            <span className="project__tag">JavaScript</span>
+                        </div>
+                        <div className="project__links">
+                            <button
+                                className="project__link"
+                                onClick={() => window.open('https://mme-prjt.netlify.app', '_blank')}
+                            >
+                                View Project →
+                            </button>
+                            <button
+                                className="project__link"
+                                onClick={() => window.open('https://github.com/Alice11703/MME_prjt', '_blank')}
+                            >
+                                GitHub →
+                            </button>
+                        </div>
+                    </div>
+                </article>
                 <article className="project__article">
                     <div className="project__content">
                         <h3>만다라트 플래너</h3>
@@ -39,32 +65,7 @@ const Projects = () => {
                         </div>
                     </div>
                 </article>
-                <article className="project__article">
-                    <div className="project__content">
-                        <h3>Project 2</h3>
-                        <p>프로젝트 설명이 들어갑니다.</p>
-                        <div className="project__tags">
-                            <span className="project__tag">React</span>
-                            <span className="project__tag">TypeScript</span>
-                            <span className="project__tag">GSAP</span>
-                        </div>
-                        <div className="project__links">
-                            <button
-                                className="project__link"
-                                onClick={() => window.open('프로젝트URL', '_blank')}
-                            >
-                                View Project →
-                            </button>
-                            <button
-                                className="project__link"
-                                onClick={() => window.open('깃허브URL', '_blank')}
-                            >
-                                GitHub →
-                            </button>
-                        </div>
-                    </div>
-                </article>
-                <article className="project__article">
+                {/* <article className="project__article">
                     <div className="project__content">
                         <h3>Project 3</h3>
                         <p>프로젝트 설명이 들어갑니다.</p>
@@ -88,8 +89,8 @@ const Projects = () => {
                             </button>
                         </div>
                     </div>
-                </article>
-                <article className="project__article">
+                </article> */}
+                {/* <article className="project__article">
                     <div className="project__content">
                         <h3>Project 4</h3>
                         <p>프로젝트 설명이 들어갑니다.</p>
@@ -113,7 +114,7 @@ const Projects = () => {
                             </button>
                         </div>
                     </div>
-                </article>
+                </article> */}
             </div>
             <div className="project__social">
                 <Link to="https://github.com/Alice11703" target="_blank">GitHub</Link>
