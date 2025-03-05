@@ -4,7 +4,7 @@ import "../statics/css/colorTheme.css";
 function DarkModeToggle() {
     const [isDark, setIsDark] = useState(() => {
         const savedTheme = localStorage.getItem("theme");
-        return savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        return savedTheme ? savedTheme === "dark" : true;
     });
 
     useEffect(() => {
