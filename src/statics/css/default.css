@@ -389,11 +389,14 @@ section#career .sc__title::before {
 .gallup__cont .gallup__desc dl {
   margin-block: 10px 0;
 }
-.gallup__cont .gallup__desc dl:hover {
-  color: var(--text-em);
+.gallup__cont .gallup__desc dl dt {
+  font-weight: 700;
 }
 .gallup__cont .gallup__desc p {
   margin-block: 2px;
+}
+.gallup__cont .gallup__desc h4 + p {
+  margin-block-end: 20px;
 }
 .bar {
   width: 10px;

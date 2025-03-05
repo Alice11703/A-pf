@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import GallupImage from '../../statics/images/img_gallup.png';
 
 const strengthsData = [
@@ -99,46 +99,69 @@ const strengthsData = [
     }
 ];
 
+// 상수 분리
+const GALLUP_LINK = "https://www.gallup.com/cliftonstrengths/ko";
+const DESCRIPTION_TEXT = "이 강점들은 제가 맡은 일에서 최상의 결과를 도출하고, 협력과 신뢰를 바탕으로 성과를 극대화하는 데 중요한 역할을 합니다. 각 강점을 통해 저는 변화에 유연하게 대처하고, 팀의 강점을 이끌어내며, 책임감 있게 일을 완수해 나갑니다. 이러한 강점들이 저의 차별화된 가치입니다.";
+
+// 재사용 가능한 컴포넌트로 분리
+const StrengthDetail = memo(({ detail, index }) => (
+    <p key={index}>
+        {detail.title}: {detail.content}
+    </p>
+));
+
+const StrengthItem = memo(({ strength }) => (
+    <dl>
+        <dt>
+            <span className={`bar ${strength.colorClass}`}>&nbsp;</span>
+            {strength.id}. {strength.name}
+        </dt>
+        <dd>
+            {strength.details.map((detail, index) => (
+                <StrengthDetail
+                    key={`${strength.id}-${index}`}
+                    detail={detail}
+                    index={index}
+                />
+            ))}
+        </dd>
+    </dl>
+));
+
 const Gallup = () => {
     return (
         <div className="sc__container gallup__cont">
             <div className="gallup__blank">
                 <h1 className="sc__subtitle">나의 CliftonStrengths® 34 결과</h1>
-                <a 
-                    href="https://drive.google.com/file/d/107YKRj9gyFcJq1PAtxIy2mIBzc8k3lyE/view?usp=drive_link" 
-                    target="_blank" 
+                <a
+                    href={GALLUP_LINK}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="learn-more-link"
+                    aria-label="CliftonStrengths에 대해 더 알아보기"
                 >
                     더 알아보기
                 </a>
             </div>
             <div className="gallup__desc">
                 <div className="gallup__img">
-                    <img alt="Gallup test result" src={GallupImage}></img>
+                    <img
+                        alt="Gallup test result"
+                        src={GallupImage}
+                        loading="lazy"
+                    />
                 </div>
                 <h4>강점 및 기여</h4>
-                <p>
-                    이 강점들은 제가 맡은 일에서 최상의 결과를 도출하고, 협력과 신뢰를 바탕으로 성과를 극대화하는 데 중요한 역할을 합니다. 각 강점을 통해 저는 변화에 유연하게 대처하고, 팀의 강점을 이끌어내며, 책임감 있게 일을 완수해 나갑니다. 이러한 강점들이 저의 차별화된 가치입니다.
-                </p>
+                <p>{DESCRIPTION_TEXT}</p>
                 {strengthsData.map((strength) => (
-                    <dl key={strength.id}>
-                        <dt>
-                            <span className={`bar ${strength.colorClass}`}>&nbsp;</span>
-                            {strength.id}. {strength.name}
-                        </dt>
-                        <dd>
-                            {strength.details.map((detail, index) => (
-                                <p key={index}>
-                                    {detail.title}: {detail.content}
-                                </p>
-                            ))}
-                        </dd>
-                    </dl>
+                    <StrengthItem
+                        key={strength.id}
+                        strength={strength}
+                    />
                 ))}
             </div>
         </div>
     );
 };
 
-export default Gallup;
+export default memo(Gallup);
