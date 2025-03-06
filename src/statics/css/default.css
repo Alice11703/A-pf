@@ -44,6 +44,9 @@ footer {
 }
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: none;
+  -webkit-overflow-scrolling: auto;
+  overscroll-behavior: auto;
 }
 a {
   color: inherit;
@@ -137,7 +140,9 @@ li {
   margin: 0 auto;
   width: calc(100%);
   text-align: center;
-  /* background: url(../images/bg_img.png) repeat center center; */
+  scroll-snap-type: none;
+  -webkit-overflow-scrolling: auto;
+  overscroll-behavior: auto;
 }
 section {
   min-height: 40vh;
@@ -728,4 +733,22 @@ section#career .sc__title::before {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Safari 브라우저 감지 */
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .toggle-icon {
+            display: inline-block !important;
+        }
+        
+        /* 선택적: Safari에서 대체할 스타일 */
+        .darkmode-toggle {
+            /* Safari용 대체 스타일 */
+            background-color: var(--bg-color);
+            border: 1px solid var(--borderSoft);
+            padding: 8px 16px;
+            border-radius: 20px;
+        }
+    }
 }

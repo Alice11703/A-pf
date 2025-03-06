@@ -150,6 +150,7 @@
 }
 
 .toggle-icon {
+  display: inline-block;
   margin-right: 8px;
   transition: transform 0.3s ease;
 }
