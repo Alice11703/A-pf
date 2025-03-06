@@ -495,8 +495,10 @@ section#career .sc__title::before {
   color: var(--text-color);
 }
 .project__period {
-  text-align: left;
-  opacity: 0.6;
+  margin-inline-start: 10px;
+  font-size: 1rem;
+  color: var(--text-soft);
+  font-weight: normal;
 }
 .project__cont {
   display: flex;

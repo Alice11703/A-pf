@@ -21,7 +21,12 @@ const Section = ({ id, title }) => {
 
     return (
         <section id={id} className="section">
-            <h2 className="sc__title">{title}</h2>
+            <h2 className="sc__title">
+                {title}
+                {title === "Projects" && (
+                    <span className="project__period"> ~ {new Date().getMonth() + 1}.{new Date().getFullYear()}</span>
+                )}
+            </h2>
             {renderContent()}
         </section>
     );

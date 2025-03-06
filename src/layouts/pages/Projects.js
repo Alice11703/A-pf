@@ -1,17 +1,15 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
-const IconDot = () => {
-    return (
-        <span className="ico__dot"> </span>
-    );
-};
+// const IconDot = () => {
+//     return (
+//         <span className="ico__dot"> </span>
+//     );
+// };
 
 const Projects = () => {
     return (
         <>
-            <p className="project__period"><IconDot /> ~ {new Date().getMonth() + 1}.{new Date().getFullYear()}</p>
-
             <div className="project__cont">
                 <article className="project__article">
                     <div className="project__content">
