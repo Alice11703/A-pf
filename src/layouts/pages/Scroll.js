@@ -1,10 +1,53 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const ANIMATION_CONFIG = {
+    initial: {
+        opacity: 0,
+        y: 30,
+        rotateX: 30,
+        filter: "blur(10px)"
+    },
+    animate: {
+        opacity: 1,
+        y: 0,
+        rotateX: 0,
+        filter: "blur(0px)",
+        duration: 0.8,
+        ease: "power2.out"
+    }
+};
+
 export default function Scroll() {
+    const handleScroll = useCallback((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                gsap.to(entry.target, ANIMATION_CONFIG.animate);
+            }
+        });
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(handleScroll, {
+            threshold: 0.1,
+            rootMargin: "0px"
+        });
+
+        const elements = document.querySelectorAll('.scroll-element');
+        elements.forEach(el => {
+            gsap.set(el, ANIMATION_CONFIG.initial);
+            observer.observe(el);
+        });
+
+        return () => {
+            elements.forEach(el => observer.unobserve(el));
+            observer.disconnect();
+        };
+    }, [handleScroll]);
+
     useEffect(() => {
         const applyAnimations = () => {
             const screenWidth = window.innerWidth;
