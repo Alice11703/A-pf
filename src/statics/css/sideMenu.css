@@ -42,7 +42,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;
+  width: -webkit-fill-available;
   height: 2px;
   background-color: var(--text-em);
   transition: width 0.3s ease;

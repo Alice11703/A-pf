@@ -17,7 +17,7 @@ const Home = () => {
                     <Scroll />
                     <div className="btn__resume">
                         <Link
-                            to="https://drive.google.com/file/d/1xe8YSs-a-UVjByjfnrqSWIxScdsByuBI/view?usp=drive_link"
+                            to="https://drive.google.com/file/d/1xe8YSs-a-UVjByjfnrqSWIxScdsByuBI/view?usp=sharing"
                             target="_blank"
                         >
                         </Link>

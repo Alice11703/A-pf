@@ -16,7 +16,7 @@ const ANIMATION_CONFIG = {
         y: 0,
         rotateX: 0,
         filter: "blur(0px)",
-        duration: 0.8,
+        duration: 0.3,
         ease: "power2.out"
     }
 };

@@ -513,7 +513,7 @@ section#career .sc__title::before {
   justify-content: flex-start;
   /**/
   width: 90%;
-  margin: 0 auto;
+  margin: 0;
   padding: 20px;
   border: 1px solid var(--borderSoft);
   border-radius: 10px;
@@ -521,11 +521,11 @@ section#career .sc__title::before {
 }
 .project__social {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   justify-items: center;
   gap: 2.5rem;
   max-width: 1200px;
-  margin: 10px auto;
+  margin: 10px 0;
   padding-block: 2rem;
   padding-inline: 0;
 }

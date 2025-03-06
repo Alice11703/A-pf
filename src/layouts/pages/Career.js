@@ -9,7 +9,7 @@ import ELLogoImage from '../../statics/images/logo_everland.png';
 const careerData = [
     {
         logo: CalyxLogoImage,
-        title: "CalyxTechnologyInc.한국사무소",
+        title: "CalyxTechnologyInc.",
         position: "선임연구원/PDG",
         period: "2016.09 - 2024.06",
         description: `미국 금융 솔루션 개발 및 판매, 서비스
