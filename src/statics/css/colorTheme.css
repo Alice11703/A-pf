@@ -36,10 +36,8 @@ body {
 
 /* 모든 요소에 대한 전환 효과 */
 * {
-  transition: background-color 0.3s ease,
-              color 0.18s ease,
-              border-color 0.3s ease,
-              box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, color 0.18s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* 특정 요소들의 스타일 */
@@ -69,5 +67,3 @@ body {
 .toggle-btn:hover {
   background-color: var(--hover-color);
 }
-
-

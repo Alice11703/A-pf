@@ -45,7 +45,7 @@ nav .btn__home a:hover {
 nav .nav__list {
   grid-area: 1 / 2 / 2 / 3;
   /**/
-  padding-inline-start:1rem;
+  padding-inline-start: 1rem;
   text-align: right;
 }
 nav .nav__list a {

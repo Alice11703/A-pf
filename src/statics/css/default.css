@@ -53,6 +53,9 @@ ul,
 li {
   list-style: none;
 }
+.txt_left {
+  text-align: left;
+}
 .unselectable {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -80,7 +83,7 @@ li {
   font-family: "Font Awesome 5 Free";
   font-size: 0.6rem;
   font-weight: 900;
-  vertical-align: middle;
+  vertical-align: 2px;
   content: "\f111";
 }
 .ico__hands::before {
@@ -397,13 +400,13 @@ section#career .sc__title::before {
 }
 .gallup__cont .gallup__desc p {
   margin-block: 0.5em 0;
-    padding: 0.3rem 0.8rem;
-    background: var(--button-bg);
-    color: var(--text-color);
-    border-radius: 20px;
-    font-size: 0.85rem;
-    transition: all 0.3sease;
-    opacity: 0.6;
+  padding: 0.3rem 0.8rem;
+  background: var(--button-bg);
+  color: var(--text-color);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: all 0.3sease;
+  opacity: 0.6;
 }
 .gallup__cont .gallup__desc h2 {
   margin-block: 1.5rem 0.3rem;
@@ -411,7 +414,7 @@ section#career .sc__title::before {
 }
 .gallup__cont .gallup__desc h2 + p {
   margin-block-end: 20px;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
 }
 .bar {
@@ -661,40 +664,40 @@ section#career .sc__title::before {
 }
 
 .gallup__desc dd.hidden {
-    display: none;
+  display: none;
 }
 
 .gallup__desc dd.visible {
-    display: block;
-    animation: fadeIn 0.3s ease-in;
+  display: block;
+  animation: fadeIn 0.3s ease-in;
 }
 
 .expand-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: var(--button-bg);
-    color: var(--text-color);
-    border: 1px solid var(--borderSoft);
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: 1px solid var(--borderSoft);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .expand-button:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    transform: translateY(-2px);
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  transform: translateY(-2px);
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

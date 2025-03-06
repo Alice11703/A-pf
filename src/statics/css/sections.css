@@ -1,32 +1,32 @@
 /* 섹션 공통 스타일 */
 .section {
-    min-height: 40vh;
-    margin: 0 0 calc(50px + 3vh) 0;
-    padding-block-start: 3vh;
-    padding-inline: var(--common-gutter);
+  min-height: 40vh;
+  margin: 0 0 calc(50px + 3vh) 0;
+  padding-block-start: 3vh;
+  padding-inline: var(--common-gutter);
 }
 
 .sc__title {
-    margin-block-end: 30px;
-    font-size: clamp(1.8rem, 2.2rem + 0.5vw, 2.5rem);
-    font-weight: 700;
-    text-align: left;
-    text-transform: uppercase;
+  margin-block-end: 30px;
+  font-size: clamp(1.8rem, 2.2rem + 0.5vw, 2.5rem);
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
 }
 
 /* 반응형 처리 */
 @media (max-width: 780px) {
-    .section {
-        min-height: 30vh;
-        margin: calc(30px + 5vh) 0;
-        padding-block-start: 2vh;
-        padding-inline: 1rem;
-    }
+  .section {
+    min-height: 30vh;
+    margin: calc(30px + 5vh) 0;
+    padding-block-start: 2vh;
+    padding-inline: 1rem;
+  }
 
-    .sc__title {
-        margin-block-end: 20px;
-        text-align: center;
-    }
+  .sc__title {
+    margin-block-end: 20px;
+    text-align: center;
+  }
 }
 
-/* ... 나머지 섹션 관련 스타일 ... */ 
+/* ... 나머지 섹션 관련 스타일 ... */

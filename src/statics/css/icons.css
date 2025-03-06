@@ -2,8 +2,8 @@
 .ico__check::before,
 .ico__dot::before,
 .ico__hands::before {
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
-/* ... 나머지 아이콘 관련 스타일 ... */ 
+/* ... 나머지 아이콘 관련 스타일 ... */

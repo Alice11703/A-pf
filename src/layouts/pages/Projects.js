@@ -1,3 +1,4 @@
+import { alignProperty } from "@mui/material/styles/cssUtils";
 import React from "react";
 import { Link } from 'react-router-dom';
 
@@ -10,7 +11,7 @@ const IconDot = () => {
 const Projects = () => {
     return (
         <>
-            <p><IconDot /> ~ {new Date().getMonth() + 1}.{new Date().getFullYear()}</p>
+            <p className="txt_left"><IconDot /> ~ {new Date().getMonth() + 1}.{new Date().getFullYear()}</p>
 
             <div className="project__cont">
                 <article className="project__article">
