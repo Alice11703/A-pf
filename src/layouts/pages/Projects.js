@@ -1,4 +1,3 @@
-import { alignProperty } from "@mui/material/styles/cssUtils";
 import React from "react";
 import { Link } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ const IconDot = () => {
 const Projects = () => {
     return (
         <>
-            <p className="txt_left"><IconDot /> ~ {new Date().getMonth() + 1}.{new Date().getFullYear()}</p>
+            <p className="project__period"><IconDot /> ~ {new Date().getMonth() + 1}.{new Date().getFullYear()}</p>
 
             <div className="project__cont">
                 <article className="project__article">
@@ -29,13 +28,13 @@ const Projects = () => {
                                 className="project__link"
                                 onClick={() => window.open('https://mme-prjt.netlify.app', '_blank')}
                             >
-                                View Project →
+                                View Project
                             </button>
                             <button
                                 className="project__link"
                                 onClick={() => window.open('https://github.com/Alice11703/MME_prjt', '_blank')}
                             >
-                                GitHub →
+                                GitHub
                             </button>
                         </div>
                     </div>
@@ -55,13 +54,13 @@ const Projects = () => {
                                 className="project__link"
                                 onClick={() => window.open('https://mandalart-planner.netlify.app/', '_blank')}
                             >
-                                View Project →
+                                View Project
                             </button>
                             <button
                                 className="project__link"
                                 onClick={() => window.open('https://github.com/Alice11703/mandalart-planner', '_blank')}
                             >
-                                GitHub →
+                                GitHub
                             </button>
                         </div>
                     </div>
@@ -80,13 +79,13 @@ const Projects = () => {
                                 className="project__link"
                                 onClick={() => window.open('프로젝트URL', '_blank')}
                             >
-                                View Project →
+                                View Project
                             </button>
                             <button
                                 className="project__link"
                                 onClick={() => window.open('깃허브URL', '_blank')}
                             >
-                                GitHub →
+                                GitHub
                             </button>
                         </div>
                     </div>

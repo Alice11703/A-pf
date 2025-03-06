@@ -322,29 +322,32 @@ section#career .sc__title::before {
 }
 .about__cont img {
   width: 300px;
+  object-fit: contain;
 }
 .about__cont .about__greeting {
   display: inline-flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  padding-inline: 40px 10px;
+  /**/
+  width: 54vw;
+  /* padding-inline: 40px 10px; */
 }
 .about__desc p {
-  margin-block: 12px 6px;
+  margin-block: 0.6rem 0.3rem;
   line-height: calc(1rem * 1.5);
 }
 .about__desc p:not(:first-of-type)::before {
   padding-inline-end: 0.3rem;
-  color: var(--text-color);
+  color: var(--text-em);
   font-family: "Font Awesome 5 Free";
   font-size: 1rem;
   font-weight: 900;
-  opacity: 0.4;
+  opacity: 0.6;
   content: "\f058";
 }
 .about__desc p:first-of-type {
-  margin-block: 6px 24px;
+  margin-block: 1.5rem 2rem;
 }
 .about__desc h1 {
   margin-block: 6px;
@@ -356,7 +359,7 @@ section#career .sc__title::before {
   flex-direction: row;
   flex-wrap: nowrap;
   align-content: center;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   margin-block: 10vh 0;
 }
 .gallup__cont .sc__subtitle::after {
@@ -372,7 +375,6 @@ section#career .sc__title::before {
   justify-content: flex-start;
   flex-direction: column;
   align-items: flex-start;
-  width: 338px;
   border-top: 1px solid var(--borderSoft);
 }
 .gallup__cont img {
@@ -384,12 +386,16 @@ section#career .sc__title::before {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
-  width: 50vw;
-  padding-inline: 40px 10px;
+  width: 54vw;
+  /* padding-inline: 40px 10px; */
   text-align: left;
 }
 .gallup__cont .gallup__desc dl {
   margin-block: 1.5rem 0;
+}
+.gallup__cont .gallup__desc dl:hover dd,
+.gallup__cont .gallup__desc dl:hover p {
+  opacity: 1;
 }
 .gallup__cont .gallup__desc dl dt {
   font-weight: 700;
@@ -398,6 +404,9 @@ section#career .sc__title::before {
   margin-inline-start: 1rem;
   opacity: 0.8;
 }
+.gallup__cont .gallup__desc dl dd p:hover {
+  color: var(--text-em);
+}
 .gallup__cont .gallup__desc p {
   margin-block: 0.5em 0;
   padding: 0.3rem 0.8rem;
@@ -405,7 +414,7 @@ section#career .sc__title::before {
   color: var(--text-color);
   border-radius: 20px;
   font-size: 0.85rem;
-  transition: all 0.3sease;
+  transition: var(--transition);
   opacity: 0.6;
 }
 .gallup__cont .gallup__desc h2 {
@@ -434,7 +443,7 @@ section#career .sc__title::before {
 .learn-more-link {
   display: inline-block;
   margin-top: 10px;
-  color: var(--text-em);
+  color: var(--txtSoft);
   text-decoration: none;
   font-size: 14px;
   opacity: 0.6;
@@ -450,19 +459,21 @@ section#career .sc__title::before {
 ------------------------ */
 .skill__cont--set {
   margin: 20px 0 0 0;
-  text-align: center;
+  text-align: left;
 }
 .skill__cont--set p {
   display: inline-block;
   margin: 5px;
-  padding: 6px 10px;
-  border: 1px solid var(--text-color);
-  border-radius: 5px;
-  background: none;
+  padding: 0.3rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background: var(--button-bg);
   color: var(--text-color);
+  font-size: 0.85rem;
   text-indent: initial;
 }
 .skill__cont--set p::before {
+  display: none;
   padding-inline-end: 0.5rem;
   color: var(--text-em);
   font-family: "Font Awesome 5 Free";
@@ -477,6 +488,10 @@ section#career .sc__title::before {
 ------------------------ */
 #projects .ico__dot::before {
   color: var(--text-color);
+}
+.project__period {
+  text-align: left;
+  opacity: 0.6;
 }
 .project__cont {
   display: flex;
@@ -501,21 +516,22 @@ section#career .sc__title::before {
 }
 .project__social {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   justify-items: center;
   gap: 2.5rem;
   max-width: 1200px;
   margin: 10px auto;
-  padding: 2rem;
+  padding-block: 2rem;
+  padding-inline: 0;
 }
 .project__social a {
   display: inline-block;
-  padding: clamp(1rem, 3vw, 2rem);
+  padding: clamp(1rem, 2vw, 2rem);
   border: 1px solid var(--text-color);
   border-radius: 2rem;
   background: var(--bg-color);
   color: var(--text-color);
-  font-size: clamp(1rem, 3vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   text-align: center;
   line-height: 30px;
   text-decoration: none;
@@ -574,6 +590,7 @@ section#career .sc__title::before {
 .career__cont .career__logo img {
   max-width: 50%;
   max-height: 20vh;
+  object-fit: contain;
 }
 .career__cont .career__detail {
   grid-area: 1 / 2 / 2 / 3;
@@ -608,11 +625,16 @@ section#career .sc__title::before {
   margin: 1.2rem 0 2% 0;
   text-align: left;
 }
+.career__cont .career__desc:hover > div p,
+.career__cont .career__desc:hover span {
+  opacity: 1;
+  transition: opacity 0.6s;
+}
 .career__cont .career__desc span {
   display: inline-block;
   color: var(--text-em);
   font-weight: 400;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 .career__cont .career__desc p.career__desc__product {
   margin-block-start: 2rem;
@@ -642,25 +664,30 @@ section#career .sc__title::before {
 }
 
 .goto-btn {
-  padding: 4px 12px;
-  background-color: var(--txtSoft);
-  color: var(--bg-color);
+  padding: 2px 10px;
+  background-color: var(--button-bg);
+  color: var(--text-color);
   border-radius: 20px;
   font-size: 14px;
   text-decoration: none;
+  opacity: 0.6;
   transition: background-color 0.2s;
 }
-.goto-btn:hover::before {
+/* .goto-btn:hover::before {
   padding-inline-end: 0.5rem;
   color: var(--bg-color);
   font-family: "Font Awesome 5 Free";
   font-size: 0.8rem;
   font-weight: 900;
   content: "\f0a4";
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
+  transition: var(--transition);
+} */
 .goto-btn:hover {
-  background-color: var(--text-em);
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  opacity: 1;
+  transform: translateX(3px);
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .gallup__desc dd.hidden {
@@ -686,6 +713,7 @@ section#career .sc__title::before {
 }
 
 .expand-button:hover {
+  border: 1px solid var(--text-color);
   background-color: var(--text-color);
   color: var(--bg-color);
   transform: translateY(-2px);
