@@ -28,7 +28,7 @@ const careerData = [
                 product: "Product ZENLY", 
                 desc: "클라우드 기반 대출 플랫폼으로, 대출 프로세스를 간소화하고 효율성을 높여주는 모기지 플랫폼", 
                 contribution: "프로젝트 개발 및 유지보수, 반응형 웹 서비스", 
-                subDesc: "미국 웹 접근성 (ADA) 인증 진행", 
+                subDesc: "미국 장애인 법 (ADA) 준수에 따라 웹 접근성 개선 프로젝트 진행, WCAG 2.1 기준을 기반으로 웹사이트의 접근성 최적화 및 ADA 인증 획득", 
                 tools: "협업 도구: Github, Notion, Jira, Slack",
                 link: "https://www.calyxsoftware.com/products/zenly"
             },
