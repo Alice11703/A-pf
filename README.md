@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# Portfolio Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## K-Ke Portfolio
 
-## Available Scripts
+Koeun Kim의 개인 포트폴리오 웹사이트입니다. React를 기반으로 제작되었으며, 반응형 디자인과 다양한 인터랙티브 요소를 포함하고 있습니다.
 
-In the project directory, you can run:
+## 📸 스크린샷
 
-### `npm start`
+### 라이트 모드
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![라이트 모드](./src/statics/images/screenshot-light.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 다크 모드
 
-### `npm test`
+![다크 모드](./src/statics/images/screenshot-dark.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 주요 기능
 
-### `npm run build`
+- **다크 모드**: 사용자 선호도에 따른 테마 전환 기능
+- **스크롤 애니메이션**: GSAP를 활용한 부드러운 스크롤 인터랙션
+- **반응형 디자인**: 모든 디바이스에서 최적화된 레이아웃
+- **타이핑 효과**: 동적인 텍스트 표시 애니메이션
+- **갤럽 강점 분석**: 인터랙티브한 강점 설명 UI
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 기술 스택
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend**: React
+- **Animation**: GSAP
+- **Styling**: CSS
+- **Version Control**: Git
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 📦 주요 라이브러리
 
-### `npm run eject`
+- `gsap`: 스크롤 기반 애니메이션 구현
+- `react-router-dom`: 페이지 라우팅
+- 기타 사용된 주요 라이브러리...
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🎨 디자인 특징
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- 미니멀한 UI/UX
+- 다크/라이트 모드 지원
+- 모던한 타이포그래피
+- 부드러운 전환 효과
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🎨 스타일링 특징
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- CSS 변수 기반 테마 관리
+- 모바일 퍼스트 반응형 디자인
+- 다크모드/라이트모드 지원
+- 부드러운 전환 효과
 
-## Learn More
+## 📱 지원 환경
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 모던 브라우저 (Chrome, Firefox, Safari, Edge 최신 버전)
+- 반응형 디자인 (모바일, 태블릿, 데스크톱)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔜 향후 계획
 
-### Code Splitting
+- [ ] 성능 최적화 및 코드 분할
+- [ ] 추가 인터랙션 요소 구현
+- [ ] 웹 접근성 개선
+- [ ] 다국어 지원 추가
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📁 프로젝트 구조
 
-### Analyzing the Bundle Size
+portfolio/
+├── public/
+│ ├── index.html
+│ └── manifest.json
+├── src/
+│ ├── components/ # 공통 컴포넌트
+│ │ ├── DarkModeToggle/ # 다크모드 토글 컴포넌트
+│ │ └── Navigation/ # 네비게이션 컴포넌트
+│ ├── layouts/ # 페이지 레이아웃
+│ │ └── pages/
+│ │ ├── Career.js # 경력 정보 페이지
+│ │ ├── Gallup.js # 갤럽 강점 페이지
+│ │ ├── Main.js # 메인 페이지
+│ │ └── Scroll.js # 스크롤 애니메이션
+│ ├── statics/ # 정적 리소스
+│ │ ├── css/ # 스타일시트
+│ │ └── images/ # 이미지 리소스
+│ ├── App.js # 앱 진입점
+│ └── index.js # 루트 진입점
+├── package.json
+└── README.md
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📝 라이선스
 
-### Making a Progressive Web App
+이 프로젝트는 MIT 라이선스 하에 있습니다.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 👤 제작자
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- 이름: 김고은 Kim Koeun
+- 이메일: hing9ugii@gmail.com
+- 웹사이트: https://k-ke-portfolio.netlify.app
