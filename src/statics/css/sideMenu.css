@@ -27,39 +27,45 @@
   gap: 1.2rem;
 }
 
-.nav__list a {
+.nav__list .nav-item {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0.5rem;
+  padding: 0;
   color: var(--text-color);
+  font-size: calc(1.4rem);
   text-decoration: none;
   transition: all 0.3s ease;
 }
-
-.nav-item::before {
+.nav__list .nav-item:hover {
+  color: var(--text-em);
+}
+.nav__list .nav-item:before {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
-  width: -webkit-fill-available;
+  width: 0; /* 초기 너비 0 */
   height: 2px;
+  padding: 0 2rem;
   background-color: var(--text-em);
-  transition: width 0.3s ease;
+  font-size: 2rem;
+  color: var(--button-bg);
+  transition: width 0.8s ease;
 }
-
-.nav-item:hover::before {
+.nav__list .nav-item:nth-child(3):before {
+  padding: 0 42px;
+}
+.nav__list .nav-item:hover:before {
   width: 100%;
 }
-
-.nav-item.active {
+.nav__list .nav-item.active {
   color: var(--text-em);
 }
 
 .nav-item.active::before {
   width: 100%;
 }
-
 .nav__list.floating {
   flex-direction: column;
   justify-content: center;

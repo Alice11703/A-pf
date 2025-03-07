@@ -35,7 +35,6 @@
 }
 
 @media (max-width: 960px) {
-  
 }
 @media (max-width: 860px) {
   /* ------------------------
@@ -164,10 +163,15 @@
     border-left: none;
     font-size: calc(1.8rem + 0.1vw);
   }
-  nav .nav__list a::before {
+  .cont__menu.open .nav__list a:before {
+    opacity: 0;
     width: 0;
-    padding: 0;
-    content: "";
+    padding: 0 2rem;
+  }
+  .cont__menu.open .nav__list a:hover:before {
+    opacity: 1;
+    width: -webkit-fill-available;
+    transition: width 0.8s ease;
   }
   .cont__menu.open .btn__mode {
     margin-block-start: 10px;
