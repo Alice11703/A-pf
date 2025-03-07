@@ -56,8 +56,14 @@
 .nav__list .nav-item:nth-child(3):before {
   padding: 0 42px;
 }
+.nav__list .nav-item:nth-child(4):before {
+  padding: 0 2.15rem;
+}
 .nav__list .nav-item:hover:before {
   width: 100%;
+}
+.nav__list .nav-item:nth-child(4):hover:before {
+  width: 40%;
 }
 .nav__list .nav-item.active {
   color: var(--text-em);
