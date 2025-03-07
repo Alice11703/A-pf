@@ -58,6 +58,7 @@
 }
 .nav__list .nav-item:nth-child(4):before {
   padding: 0 2.15rem;
+  transition: width 0.3s ease;
 }
 .nav__list .nav-item:hover:before {
   width: 100%;

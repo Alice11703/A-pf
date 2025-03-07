@@ -17,7 +17,9 @@ const ANIMATION_CONFIG = {
         rotateX: 0,
         filter: "blur(0px)",
         duration: 0.3,
-        ease: "power2.out"
+        ease: "power2.out",
+        force3D: true,
+        clearProps: "transform"
     }
 };
 

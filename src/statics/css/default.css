@@ -763,12 +763,15 @@ section#career .sc__title::before {
     content: '';
     position: absolute;
     bottom: -2px;
-    left: 50%;         /* 시작 위치를 중앙으로 변경 */
-    transform: translateX(-50%);  /* 정확한 중앙 정렬 */
-    width: 0;          /* 초기 너비 0 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
     height: 2px;
     background-color: var(--text-em);
-    transition: width 0.3s ease;  /* width 변화에 transition 추가 */
+    transition: width 0.3s ease;
+    will-change: width;  /* GPU 가속 힌트 */
+    backface-visibility: hidden;  /* 렌더링 성능 향상 */
+    -webkit-font-smoothing: antialiased;  /* 텍스트 렌더링 개선 */
 }
 
 .cont__menu.open .nav__list .nav-item:hover:before {

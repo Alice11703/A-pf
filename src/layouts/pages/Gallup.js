@@ -162,9 +162,10 @@ const Gallup = () => {
             <div className="gallup__desc">
                 <div className="gallup__img">
                     <img 
-                        alt="Gallup test result" 
-                        src={GallupImage}
+                        src={GallupImage} 
+                        alt="Gallup test result"
                         loading="lazy"
+                        decoding="async"
                     />
                 </div>
                 <h2>강점 및 기여</h2>
