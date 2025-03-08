@@ -775,5 +775,5 @@ section#career .sc__title::before {
 }
 
 .cont__menu.open .nav__list .nav-item:hover:before {
-    width: 60%;      /* hover 시 전체 너비로 확장 */
+    width: 40%;      /* hover 시 전체 너비로 확장 */
 }

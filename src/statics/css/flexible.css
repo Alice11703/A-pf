@@ -171,7 +171,7 @@
   .cont__menu.open .nav__list a:hover:before {
     opacity: 1;
     width: -webkit-fill-available;
-    transition: width 0.8s ease;
+    transition: width 0.4s ease;
   }
   .cont__menu.open .btn__mode {
     margin-block-start: 10px;
