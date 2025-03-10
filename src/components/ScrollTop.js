@@ -13,8 +13,7 @@ const ScrollTop = () => {
             // 스크롤이 100px 이상일 때 버튼 표시
             setIsVisible(scrollTop > 100);
         };
-
-        // 초기 상태 체크
+        
         updateScrollTop();
 
         window.addEventListener('scroll', updateScrollTop);

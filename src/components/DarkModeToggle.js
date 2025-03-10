@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { memo, useState, useEffect } from 'react';
 import "../statics/css/colorTheme.css";
 
-function DarkModeToggle() {
+const DarkModeToggle = memo(() => {
     const [isDark, setIsDark] = useState(() => {
         const savedTheme = localStorage.getItem("theme");
-        return savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches);
+        return savedTheme ? savedTheme === "dark" : false;
     });
 
     useEffect(() => {
@@ -13,20 +13,16 @@ function DarkModeToggle() {
         localStorage.setItem("theme", isDark ? "dark" : "light");
     }, [isDark]);
 
-    const toggleTheme = () => {
-        setIsDark(prev => !prev);
-    };
-
     return (
         <button 
-            onClick={toggleTheme} 
-            className="toggle-btn"
-            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            onClick={() => setIsDark(!isDark)} 
+            className="toggle-btn darkmode-toggle"
+            aria-label={isDark ? "라이트 모드로 전환" : "다크 모드로 전환"}
         >
             <span className="toggle-icon">{isDark ? "☀️" : "🌙"}</span>
             <span className="toggle-text">{isDark ? "Light Mode" : "Dark Mode"}</span>
         </button>
     );
-}
+});
 
 export default DarkModeToggle;
