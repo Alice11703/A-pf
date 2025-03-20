@@ -37,7 +37,7 @@ const Projects = () => {
                         </div>
                     </div>
                 </article>
-                <article className="project__article">
+                {/* <article className="project__article">
                     <div className="project__content">
                         <h3>만다라트 플래너</h3>
                         <p>만다라트 플래너는 목표 설정과 달성을 돕는 온라인 계획 도구입니다. 핵심 목표를 중심으로 세부 목표를 체계적으로 수립하고 관리할 수 있습니다. TypeScript를 이용해 만들었습니다.</p>
@@ -62,7 +62,7 @@ const Projects = () => {
                             </button>
                         </div>
                     </div>
-                </article>
+                </article> */}
                 {/* <article className="project__article">
                     <div className="project__content">
                         <h3>Project 3</h3>
