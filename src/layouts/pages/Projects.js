@@ -24,7 +24,7 @@ const Projects = () => {
                         <div className="project__links">
                             <button
                                 className="project__link"
-                                onClick={() => window.open('https://mme-prjt.netlify.app', '_blank')}
+                                onClick={() => window.open('https://mme-prjt.netlify.app/main', '_blank')}
                             >
                                 View Project
                             </button>
