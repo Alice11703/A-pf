@@ -188,7 +188,7 @@
 
 .project__article h3 {
   position: relative;
-  margin-block: 0 1rem;
+  margin-block: 0 2rem;
   color: var(--text-color);
   font-size: 1.5rem;
   transition: color 0.3s ease;
@@ -204,6 +204,7 @@
 }
 .project__content h4 {
   font-size:0.8rem;
+  font-weight:400;
 }
 .project__image {
   width:100%;
@@ -240,6 +241,8 @@
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .project__link {
@@ -273,12 +276,32 @@
 }
 
 /* 반응형 처리 */
-@media (max-width: 780px) {
+@media (max-width: 900px) {
   .project__cont {
     grid-template-columns: 1fr;
     justify-content: center;
     gap: 2rem;
     padding: 1.5rem;
+  }
+  .project__social {
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+
+  .project__article {
+    padding: 1.5rem;
+  }
+
+  /* .project__article:hover {
+    transform: translateY(-5px) scale(1.01);
+  } */
+}
+@media (min-width: 1201px) {
+  .project__cont {
+    grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1600px;
   }
   .project__social {
     justify-content: center;

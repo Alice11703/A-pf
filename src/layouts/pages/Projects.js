@@ -77,25 +77,25 @@ const Projects = () => {
                             <div className="project__links">
                             <button
                                     className="project__link"
-                                    onClick={() => window.open('/Users/alice/Documents/GitHub/A-pf/src/statics/images/prjt/img_path_screen01.png', '_blank')}
+                                    onClick={() => window.open('https://github.com/Alice11703/A-pf/blob/main/src/statics/images/prjt/img_path_screen01.png?raw=true', '_blank')}
                                 >
                                     Screen 01
                                 </button>
                                 <button
                                     className="project__link"
-                                    onClick={() => window.open('/Users/alice/Documents/GitHub/A-pf/src/statics/images/prjt/img_path_screen02.png', '_blank')}
+                                    onClick={() => window.open('https://github.com/Alice11703/A-pf/blob/main/src/statics/images/prjt/img_path_screen02.png?raw=true', '_blank')}
                                 >
                                     Screen 02
                                 </button>
                                 <button
                                     className="project__link"
-                                    onClick={() => window.open('/Users/alice/Documents/GitHub/A-pf/src/statics/images/prjt/img_path_screen03.png', '_blank')}
+                                    onClick={() => window.open('https://github.com/Alice11703/A-pf/blob/main/src/statics/images/prjt/img_path_screen03.png?raw=true', '_blank')}
                                 >
                                     Screen 03
                                 </button>
                                 <button
                                     className="project__link"
-                                    onClick={() => window.open('/Users/alice/Documents/GitHub/A-pf/src/statics/images/prjt/img_path_screen04.png', '_blank')}
+                                    onClick={() => window.open('https://github.com/Alice11703/A-pf/blob/main/src/statics/images/prjt/img_path_screen04.png?raw=true', '_blank')}
                                 >
                                     Screen 04
                                 </button>
@@ -117,13 +117,13 @@ const Projects = () => {
                             <div className="project__links">
                             <button
                                     className="project__link"
-                                    onClick={() => window.open('/Users/alice/Documents/GitHub/A-pf/src/statics/images/prjt/img_point_screen01.png', '_blank')}
+                                    onClick={() => window.open('https://github.com/Alice11703/A-pf/blob/main/src/statics/images/prjt/img_point_screen01.png?raw=true', '_blank')}
                                 >
                                     Screen 01
                                 </button>
                                 <button
                                     className="project__link"
-                                    onClick={() => window.open('/Users/alice/Documents/GitHub/A-pf/src/statics/images/prjt/img_point_screen02.png', '_blank')}
+                                    onClick={() => window.open('https://github.com/Alice11703/A-pf/blob/main/src/statics/images/prjt/img_point_screen02.png?raw=true', '_blank')}
                                 >
                                     Screen 02
                                 </button>
@@ -164,7 +164,7 @@ const Projects = () => {
                     <article className="project__article">
                         <div className="project__content">
                             <h3>만다라트 플래너</h3>
-                            <p>React 기반 연습용 프로젝트. 만다라트 플래너는 목표 설정과 달성을 돕는 온라인 계획 도구입니다. 핵심 목표를 중심으로 세부 목표를 체계적으로 수립하고 관리할 수 있습니다. TypeScript를 이용해 만들었습니다.</p>
+                            <p>React 기반 연습용 프로젝트.<br />만다라트 플래너는 목표 설정과 달성을 돕는 온라인 계획 도구입니다. 핵심 목표를 중심으로 세부 목표를 체계적으로 수립하고 관리할 수 있습니다. TypeScript를 이용해 만들었습니다.</p>
                             <div className="project__tags">
                                 <span className="project__tag">React</span>
                                 <span className="project__tag">Next.js</span>
