@@ -7,7 +7,7 @@ import PathImage01 from '../../statics/images/prjt/img_path_screen01.png';
 // import PathImage04 from '../../statics/images/prjt/img_path_screen04.png';
 import ZenlyImage01 from '../../statics/images/prjt/img_zenly_screen01.png';
 import PointImage01 from '../../statics/images/prjt/img_point_screen01.png';
-import PointImage02 from '../../statics/images/prjt/img_point_screen02.png';
+// import PointImage02 from '../../statics/images/prjt/img_point_screen02.png';
 import MMEImage01 from '../../statics/images/prjt/img_mme_screen01.png';
 
 // const IconDot = () => {
@@ -67,7 +67,7 @@ const Projects = () => {
                     <article className="project__article">
                         <div className="project__content">
                             <h3>Path</h3>
-                            <div className="project__image"><img alt="Product Path Screen Image" src={PathImage01} /></div>
+                            <div className="project__image"><img alt="Product Path Screen" src={PathImage01} /></div>
                             <p>대출 기관을 위한 대출 프로세스를 간소화하는 클라우드 기반의 솔루션</p>
                             <div className="project__tags">
                                 <span className="project__tag">HTML</span>
@@ -107,7 +107,7 @@ const Projects = () => {
                     <article className="project__article">
                         <div className="project__content">
                             <h3>Point</h3>
-                            <div className="project__image"><img alt="Product Point Screen Image" src={PointImage01} /></div>
+                            <div className="project__image"><img alt="Product Point Screen" src={PointImage01} /></div>
                             <p>모기지 대출 프로세스를 자동화하고 간소화하는 데 중점을 둔 소프트웨어로, 대출 신청부터 승인, 클로징까지의 전 과정을 지원하는 통합 POS 시스템</p>
                             <div className="project__tags">
                                 <span className="project__tag">HTML</span>
@@ -135,7 +135,7 @@ const Projects = () => {
                     <article className="project__article">
                         <div className="project__content">
                             <h3>Mortgage Market Exchange</h3>
-                            <div className="project__image"><img alt="Product MME Screen Image" src={MMEImage01} /></div>
+                            <div className="project__image"><img alt="Product MME Screen" src={MMEImage01} /></div>
                             <p>MME는 사용자가 대출을 신청하고, 제출한 대출의 진행 상황을 확인할 수 있도록 지원하는 플랫폼입니다. 금융 기관과 대출 신청자 간의 원활한 커뮤니케이션을 돕는 것을 목표로 합니다.
                             </p>
                             <div className="project__tags">
