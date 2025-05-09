@@ -202,6 +202,17 @@
   position: relative;
   z-index: 1;
 }
+.project__content h4 {
+  font-size:0.8rem;
+}
+.project__image {
+  width:100%;
+}
+
+.project__image img {
+  width:100%;
+  border-radius: 5px;
+}
 
 .project__tags {
   display: flex;
