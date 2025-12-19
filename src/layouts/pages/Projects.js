@@ -189,10 +189,6 @@ const Projects = () => {
                         </div>
                     </article> */}
                 </div>
-                <nav className="project__social" aria-label="소셜 미디어 링크">
-                    {/* <Link to="https://github.com/Alice11703" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필">GitHub</Link> */}
-                    {/* <Link to="https://velog.io/@-gromit/posts" target="_blank" rel="noopener noreferrer" aria-label="VELOG 블로그">VELOG</Link> */}
-                </nav>
             </section>
         </>
     );

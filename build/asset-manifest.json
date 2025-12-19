@@ -1,20 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.b879a9cb.css",
-    "main.js": "/static/js/main.6850a6dc.js",
+    "main.css": "/static/css/main.85ba98e7.css",
+    "main.js": "/static/js/main.bd57cb38.js",
     "static/js/488.9c92ff38.chunk.js": "/static/js/488.9c92ff38.chunk.js",
+    "static/media/img_mme_screen01.png": "/static/media/img_mme_screen01.e817bc780b2b0f1f9d20.png",
+    "static/media/img_path_screen01.png": "/static/media/img_path_screen01.d04a8c0d5957422fc350.png",
+    "static/media/img_zenly_screen01.png": "/static/media/img_zenly_screen01.20536ef853e0db733573.png",
+    "static/media/img_point_screen01.png": "/static/media/img_point_screen01.baaf2100b1ecf0869fa9.png",
     "static/media/img_me_4.png": "/static/media/img_me_4.fde579be13155972fd51.png",
     "static/media/logo_everland.png": "/static/media/logo_everland.1bbc7208a8b76ae9bc18.png",
     "static/media/logo_calyx.svg": "/static/media/logo_calyx.a6eafb0faf3e64c208db49a2d6aba247.svg",
     "static/media/logo_coop.jpg": "/static/media/logo_coop.3649b31ecb3642de5191.jpg",
+    "static/media/img_gallup.png": "/static/media/img_gallup.cdfc4cf68ab97a8d9988.png",
     "static/media/logo_incruit.png": "/static/media/logo_incruit.691c065a817613ae6522.png",
     "index.html": "/index.html",
-    "main.b879a9cb.css.map": "/static/css/main.b879a9cb.css.map",
-    "main.6850a6dc.js.map": "/static/js/main.6850a6dc.js.map",
+    "main.85ba98e7.css.map": "/static/css/main.85ba98e7.css.map",
+    "main.bd57cb38.js.map": "/static/js/main.bd57cb38.js.map",
     "488.9c92ff38.chunk.js.map": "/static/js/488.9c92ff38.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b879a9cb.css",
-    "static/js/main.6850a6dc.js"
+    "static/css/main.85ba98e7.css",
+    "static/js/main.bd57cb38.js"
   ]
 }
