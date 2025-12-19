@@ -161,7 +161,7 @@ const Projects = () => {
                         </div>
                     </article>
                     {/* mandalart */}
-                    <article className="project__article">
+                    {/* <article className="project__article">
                         <div className="project__content">
                             <h3>만다라트 플래너</h3>
                             <p>React 기반 연습용 프로젝트.<br />만다라트 플래너는 목표 설정과 달성을 돕는 온라인 계획 도구입니다. 핵심 목표를 중심으로 세부 목표를 체계적으로 수립하고 관리할 수 있습니다. TypeScript를 이용해 만들었습니다.</p>
@@ -187,10 +187,10 @@ const Projects = () => {
                                 </button>
                             </div>
                         </div>
-                    </article>
+                    </article> */}
                 </div>
                 <nav className="project__social" aria-label="소셜 미디어 링크">
-                    <Link to="https://github.com/Alice11703" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필">GitHub</Link>
+                    {/* <Link to="https://github.com/Alice11703" target="_blank" rel="noopener noreferrer" aria-label="GitHub 프로필">GitHub</Link> */}
                     {/* <Link to="https://velog.io/@-gromit/posts" target="_blank" rel="noopener noreferrer" aria-label="VELOG 블로그">VELOG</Link> */}
                 </nav>
             </section>

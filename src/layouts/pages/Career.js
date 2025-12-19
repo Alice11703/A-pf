@@ -34,7 +34,7 @@ const careerData = [
             },
             { 
                 product: "Product Point", 
-                desc: "대출 신청부터 클로징까지의 모기지 프로세스 전체를 처리하는 통합 POS 시스템 구축", 
+                desc: "대출 신청부터 클로징까지의 모기지 프로세스 전체를 처리하는 통합 솔루션", 
                 contribution: "프로젝트 개발 및 유지보수", 
                 subDesc: "Vendor 파트너 200곳 이상 연동 및 사전심사 전환율 증가에 기여", 
                 tools: "협업 도구: TFS, Jira, Slack",

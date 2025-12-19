@@ -522,7 +522,7 @@ section#career .sc__title::before {
   text-align: left;
 }
 .project__social {
-  display: flex;
+  display: none;
   justify-content: flex-start;
   justify-items: center;
   gap: 2.5rem;

@@ -211,7 +211,9 @@
 }
 
 .project__image img {
-  width:100%;
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 5px;
 }
 
